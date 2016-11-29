@@ -15,17 +15,12 @@ public class ABadVersion {
                 start=mid;
             }
         }
-        System.out.println(mid);;
+        System.out.println(mid);
     }
 
     static boolean isBadVersion(int index,int[] versions){
         return versions[index]%2==0?true:false;
     }
-
-
-
-
-
 
 }
 
