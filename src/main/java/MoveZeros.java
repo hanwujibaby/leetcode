@@ -11,7 +11,6 @@ public class MoveZeros {
         for(int i=0;i<as.length;i++){
             System.out.println(as[i]+" ");
         }
-
     }
 
 
