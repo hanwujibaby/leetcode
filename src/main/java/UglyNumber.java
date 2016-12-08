@@ -25,6 +25,7 @@ public class UglyNumber {
             }else{
                 return false;
             }
+            System.out.println();
         }
         return n==1;
     }
