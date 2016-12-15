@@ -11,9 +11,7 @@ public class StrStr {
     public static void main(String[] args) {
         System.out.println(isSubString("aababcdef","abcded"));
 
-
     }
-
 
 
     public static boolean isSubString(String origin,String targetStr){
