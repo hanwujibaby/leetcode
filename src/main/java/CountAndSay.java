@@ -24,8 +24,7 @@ public class CountAndSay {
             return "not valid number";
         }
 
-
-        if(n==0){
+        if(n==1){
             return "1";
         }else{
             String preStr=countNSay(n-1);
