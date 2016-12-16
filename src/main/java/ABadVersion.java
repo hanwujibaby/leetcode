@@ -12,22 +12,27 @@
 public class ABadVersion {
 
     public static void main(String[] args) {
-        int[] versions=new int[]{1,2,3,5,6,7,7,8};
-        int start =0;
-        int end=versions.length-1;
-        int mid=end>>1;
-        while(start<=end){
-            if(isBadVersion(mid,versions)){
-                end=mid;
-            }else{
-                start=mid;
-            }
-        }
-        System.out.println(mid);
+
+        int[] aaa=new int[]{1,2,3,4,5,6,7,8,9};
     }
 
-    static boolean isBadVersion(int index,int[] versions){
-        return versions[index]%2==0?true:false;
+    public static int firstBadVersion(int n) {
+        int start =1;
+        int end=n;
+        while(start<end){
+            //有可能溢出,所以只能end-start,而不能(end+start)/2
+            int mid=start+(end-start)/2;
+            if(isBadVersion(mid)){
+                end=mid;
+            }else{
+                start=mid+1;
+            }
+        }
+        return start;
+    }
+
+    static boolean isBadVersion(int n){
+        return true;
     }
 
 }
