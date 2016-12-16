@@ -6,32 +6,51 @@
 public class LongestCommonPrefix {
 
     public static void main(String[] args) {
-        System.out.println(findLongestCommonPrefix(new String[]{"abcde","abcd","abf"}));
+        System.out.println(findLongestCommonPrefix(new String[]{"ab","abc"}));
 
     }
 
 
-    public static String findLongestCommonPrefix(String[] strings){
-
-        if(strings==null){
+    public static String findLongestCommonPrefix(String[] strs){
+        if(strs==null){
             return "";
         }
 
-        if(strings.length==0){
+        if(strs.length==0){
             return "";
         }
+        if(strs.length==1){
+            return strs[0];
+        }
 
-        String originStr=strings[0];
+        String originStr=strs[0];
+
         char[] originChar=originStr.toCharArray();
         int i=0;
-        for(int j=1;i<originChar.length&&j<strings.length;i++,j++){
-                if(i<strings[j].toCharArray().length&& originChar[i]!=strings[j].charAt(i)){
-                    break;
+        int j=1;
+
+        int k=0;
+        boolean originGreaterThanStr=false;
+        for(i=0;i<originChar.length;i++){
+            for(j=1;j<strs.length&& i<strs[j].length()&&originChar[i]==strs[j].charAt(i);j++){
+                ;
+            }
+
+            if(j!=strs.length){
+                if(i==strs[j].length()&&i<originChar.length) {
+                    k = i;
                 }
+                else if(i<strs[j].length() && originChar[i]!=strs[j].charAt(i)){
+                    k=i;
+                }
+                break;
+            }else{
+                k=i+1;
+            }
+
         }
 
-        return strings[0].substring(0,i);
-
+        return strs[0].substring(0,k).toString();
     }
 
 }
