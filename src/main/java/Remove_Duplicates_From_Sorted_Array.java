@@ -14,37 +14,42 @@
  */
 public class Remove_Duplicates_From_Sorted_Array {
     public static void main(String[] args) {
-        int[] ns=new int[]{1,2,2,3,3,3,5,5,6,7,8,9,9};
-        int idx=removeDuplicateNum(ns);
-        System.out.println(idx);
-        /*for(int i=0;i<ns.length;i++){
+        int[] ns=new int[]{1,1,2};
+        int[] nss=removeDuplicateNum(ns);
+        for(int i=0;i<nss.length;i++) {
             System.out.println(ns[i]);
-            */
+        }
 
     }
 
 
-    public static int removeDuplicateNum(int[] nums){
+    public static int[] removeDuplicateNum(int[] nums){
         int index=0;
-        int n=index+1;
         int k=0;
-        boolean flag=false;
 
-        do{
-            while(n<nums.length&&nums[n]<=nums[index]){
-                n++;
+        for(int i=0;i<nums.length;i++){
+            int j=i+1;
+            if(j<nums.length&& nums[j]==nums[i]){
+                for(k=j;k<nums.length;k++){
+                    if(nums[k]>nums[j]){
+                        int tmp=nums[j];
+                        nums[j]=nums[k];
+                        nums[k]=tmp;
+                        i=k;
+                        index=k;
+                        break;
+                    }
+                }
             }
 
-            if(n<nums.length){
-                nums[index+1]=nums[n];
-            }
-            index=index+1;
-            k=index;
-            k++;
-        }while(k<nums.length&&n<nums.length);
+        }
 
+        int[] newA=new int[index];
+        for(int i=0;i<index;i++){
+            newA[i]=nums[i];
+        }
 
-        return index;
+        return newA;
 
     }
 
