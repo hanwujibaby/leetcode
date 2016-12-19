@@ -30,7 +30,7 @@ public class RemoveElement {
  public static int[] removeElement(int[] array,int val){
   int j=array.length-1;
 
-  for(int i=0;i<j;i++){
+    for(int i=0;i<j;i++){
     if(array[i]==val){
      while(array[j]==val){
       j--;
