@@ -9,23 +9,31 @@
  Note that 1 is typically treated as an ugly number.
  */
 public class UglyNumber {
+
     public static void main(String[] args) {
-        System.out.println(checkUglyNumber(15));
+        System.out.println(checkUglyNumber(-12));
+        System.out.println(Integer.MAX_VALUE);
+        System.out.println(Integer.MIN_VALUE);
 
     }
-    static boolean checkUglyNumber(int n){
-        while(n>=2){
-            if(n%2==0){
-                n=n/2;
-            }else if(n%3==0){
-                n=n/3;
 
-            }else if(n%5==0){
-                n=n/4;
-            }else{
-                return false;
-            }
-            System.out.println();
+    static boolean checkUglyNumber(int n){
+        if(n==0){
+            return false;
+        }
+
+        if(n==1){
+            return true;
+        }
+
+        while(n%2==0){
+            n=n>>1;
+        }
+        while(n%3==0){
+            n=n/3;
+        }
+        while(n%5==0){
+            n=n/5;
         }
         return n==1;
     }
