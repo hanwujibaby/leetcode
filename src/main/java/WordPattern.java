@@ -17,7 +17,7 @@ import java.util.HashMap;
  */
 public class WordPattern {
     public static void main(String[] args) {
-        boolean result=matchWordPattern("aac","cat cat dog");
+        boolean result=matchWordPattern("jquery","jquery");
         System.out.println(result+ "    done");
     }
 
@@ -28,6 +28,7 @@ public class WordPattern {
         String[] word=words.split(" ");
         if(chars.length!=word.length){
             System.out.println("not match");
+            return false;
         }
 
         for(int i=0;i<chars.length;i++){
