@@ -45,7 +45,6 @@ public class LengthOfLastWord {
             }
         }
 
-
         return count;
     }
 
