@@ -19,6 +19,8 @@ import java.util.Stack;
  3    3
  Note:
  Bonus points if you could solve it both recursively and iteratively.
+
+ Solution:使用栈来实现非递归的二叉树DFS遍历;
  */
 public class SymmeticTree {
     public static void main(String[] args) {
@@ -86,7 +88,6 @@ public class SymmeticTree {
         }
 
         System.out.println("rsb:"+rsb.toString());
-
 
         return rsb.toString().equals(sb.toString());
     }
