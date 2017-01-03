@@ -11,7 +11,9 @@ import javax.swing.tree.TreeNode;
  *     TreeNode left;
  *     TreeNode right;
  *     TreeNode(int x) { val = x; }
+ *
  * }
+ * Solution:递归比较;
  */
 public class SameTree {
     public static void main(String[] args) {
