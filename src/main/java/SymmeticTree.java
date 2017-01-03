@@ -22,8 +22,7 @@ import java.util.Stack;
  */
 public class SymmeticTree {
     public static void main(String[] args) {
-        System.out.println("value:" + maximumGap(new int[]{1,2,2,3,4,3,3}));
-
+        System.out.println("value:" + maximumGap(new int[]{1,2,2,-1,3,-1,3}));
     }
 
 
@@ -50,15 +49,18 @@ public class SymmeticTree {
             int nextLeftIndex=r*2+1;
             int nextRightIndex=r*2+2;
 
-            if(nextRightIndex<nums.length&& nums[nextRightIndex]>0){
+            //if(nextRightIndex<nums.length&& nums[nextRightIndex]>0){
+            if(nextRightIndex<nums.length){
                 stack.push(nextRightIndex);
             }
 
-            if(nextLeftIndex<nums.length&& nums[nextLeftIndex]>0){
+            //if(nextLeftIndex<nums.length&& nums[nextLeftIndex]>0){
+            if(nextLeftIndex<nums.length){
                 stack.push(nextLeftIndex);
             }
             sb.append(String.valueOf(nums[r]));
         }
+        System.out.println("sb:"+sb.toString());
 
 
         if(rfIndex<nums.length && nums[rfIndex]>=0){
@@ -70,16 +72,20 @@ public class SymmeticTree {
             int nextLeftIndex=r*2+1;
             int nextRightIndex=r*2+2;
 
-            if(nextLeftIndex<nums.length&& nums[nextLeftIndex]>0){
+            //if(nextLeftIndex<nums.length&& nums[nextLeftIndex]>0){
+            if(nextLeftIndex<nums.length){
                 stack.push(nextLeftIndex);
             }
 
-            if(nextRightIndex<nums.length&& nums[nextRightIndex]>0){
+            //if(nextRightIndex<nums.length&& nums[nextRightIndex]>0){
+            if(nextRightIndex<nums.length){
                 stack.push(nextRightIndex);
             }
 
             rsb.append(String.valueOf(nums[r]));
         }
+
+        System.out.println("rsb:"+rsb.toString());
 
 
         return rsb.toString().equals(sb.toString());
