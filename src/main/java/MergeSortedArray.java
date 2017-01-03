@@ -7,6 +7,8 @@
  You may assume that nums1 has enough space (size that is greater or equal to m + n) to hold additional elements from nums2.
  The number of elements initialized in nums1 and nums2 are m and n respectively.
 
+ solution:2个数组都从后向前遍历;当一个遍历之后为0;则将另一个剩余的进行遍历;
+
  */
 public class MergeSortedArray {
 
