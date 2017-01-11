@@ -27,7 +27,6 @@ public class SymmeticTree {
         System.out.println("value:" + maximumGap(new int[]{1,2,2,-1,3,-1,3}));
     }
 
-
     public static boolean maximumGap(int[] nums) {
         boolean isResult=false;
         int rootIndex=0;
@@ -36,7 +35,6 @@ public class SymmeticTree {
         StringBuilder rsb=new StringBuilder();
         sb.append(nums[rootIndex]);
         rsb.append(nums[rootIndex]);
-        //stack.push(rootIndex);
 
         int lfIndex=rootIndex*2+1;
         int rfIndex=rootIndex*2+2;
@@ -45,25 +43,22 @@ public class SymmeticTree {
             stack.push(lfIndex);
         }
 
-
         while(stack.isEmpty()==false){
             int r=stack.pop();
             int nextLeftIndex=r*2+1;
             int nextRightIndex=r*2+2;
 
-            //if(nextRightIndex<nums.length&& nums[nextRightIndex]>0){
             if(nextRightIndex<nums.length){
                 stack.push(nextRightIndex);
             }
 
-            //if(nextLeftIndex<nums.length&& nums[nextLeftIndex]>0){
             if(nextLeftIndex<nums.length){
                 stack.push(nextLeftIndex);
             }
             sb.append(String.valueOf(nums[r]));
         }
-        System.out.println("sb:"+sb.toString());
 
+        System.out.println("sb:"+sb.toString());
 
         if(rfIndex<nums.length && nums[rfIndex]>=0){
             stack.push(rfIndex);
