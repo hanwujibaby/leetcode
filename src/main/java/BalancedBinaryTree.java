@@ -4,7 +4,10 @@
  For this problem, a height-balanced binary tree is defined as
  a binary tree in which the depth of the two subtrees of every node
  never differ by more than 1.
+ 
  * Created by vixy on 17-1-11.
+ *
+ * Solution:使用递归算法进行计算，算出左右子树的高度，并比较是否大于0或者1；
  */
 public class BalancedBinaryTree {
 
