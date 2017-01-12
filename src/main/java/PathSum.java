@@ -21,10 +21,38 @@
 public class PathSum {
 
     public static void main(String[] args) {
+        TreeNode root=new TreeNode(1);
+        TreeNode n1=new TreeNode(2);
+        TreeNode n2=new TreeNode(3);
+
+        root.left=n1;
+        root.right=n2;
+
+        TreeNode n3=new TreeNode(4);
+        TreeNode n4=new TreeNode(5);
+
+        n1.left=n3;
+        n1.right=n4;
+
+        TreeNode n6=new TreeNode(1);
+        n4.right=n6;
+
+        System.out.printf("Sum:7,Tree has sum:"+hasPathSum(root,5));
 
     }
 
-    public boolean hasPathSum(TreeNode root, int sum) {
+    public static boolean  hasPathSum(TreeNode root, int sum) {
+        boolean isHaved=false;
+
+        if(root!=null){
+            if(sum-root.val==0){
+                return true;
+            }
+            return hasPathSum(root.left,sum-root.val)||hasPathSum(root.right,sum-root.val);
+        }else{
+            return false;
+        }
+
 
     }
 
