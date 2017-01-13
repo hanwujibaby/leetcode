@@ -46,12 +46,8 @@ public class PathSum {
             return false;
         }
 
-        if(sum-root.val==0){
+        if(root.left==null && root.right==null && sum==root.val){
             return true;
-        }
-
-        if(root.left==null && root.right==null){
-            return root.val==sum;
         }
 
         return hasPathSum(root.left,sum-root.val)||hasPathSum(root.right,sum-root.val);
@@ -61,7 +57,6 @@ public class PathSum {
         int val;
         TreeNode left;
         TreeNode right;
-
         TreeNode(int x) {
             val = x;
         }
