@@ -9,6 +9,8 @@ import java.util.Stack;
  The minimum depth is the number of nodes along the shortest path from the root node down to the nearest leaf node.
 
  * Created by wei4liverpool on 1/13/17.
+ *
+ * Solution:通过BFS实现,在BFS遍历每一个层级的叶子节点的时候,判断第一个没有左右子树的节点,返回层级的高度即可;
  */
 public class Minimum_Depth_of_Binary_Tree {
     public static void main(String[] args) {
