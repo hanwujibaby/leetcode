@@ -28,32 +28,33 @@ public class PathSum {
         root.left=n1;
         root.right=n2;
 
-        TreeNode n3=new TreeNode(4);
-        TreeNode n4=new TreeNode(5);
+        //TreeNode n3=new TreeNode(4);
+        //TreeNode n4=new TreeNode(5);
 
-        n1.left=n3;
-        n1.right=n4;
+        //n1.left=n3;
+        //n1.right=n4;
 
-        TreeNode n6=new TreeNode(1);
-        n4.right=n6;
+        //TreeNode n6=new TreeNode(1);
+        //n4.right=n6;
 
-        System.out.printf("Sum:7,Tree has sum:"+hasPathSum(root,5));
-
+        System.out.printf("Sum:1,Tree has sum:"+hasPathSum(root,1));
     }
 
     public static boolean  hasPathSum(TreeNode root, int sum) {
-        boolean isHaved=false;
 
-        if(root!=null){
-            if(sum-root.val==0){
-                return true;
-            }
-            return hasPathSum(root.left,sum-root.val)||hasPathSum(root.right,sum-root.val);
-        }else{
+        if(root==null) {
             return false;
         }
 
+        if(sum-root.val==0){
+            return true;
+        }
 
+        if(root.left==null && root.right==null){
+            return root.val==sum;
+        }
+
+        return hasPathSum(root.left,sum-root.val)||hasPathSum(root.right,sum-root.val);
     }
 
     static class TreeNode {
