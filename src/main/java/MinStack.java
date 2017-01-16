@@ -18,6 +18,9 @@ import java.util.Stack;
  minStack.top();      --> Returns 0.
  minStack.getMin();   --> Returns -2.
 
+
+ Solution:使用另一个栈来保存最小栈;然后在进栈和出栈的时候维护这个最小栈
+
  */
 public class MinStack {
     private Stack<Integer> stack;
