@@ -13,8 +13,8 @@
  */
 public class CompareVersionNumbers {
     public static void main(String[] args) {
-        String v1="1.1";
-        String v2="1";
+        String v1="1.1.1";
+        String v2="1.1.0";
 
         System.out.println("version1:"+v1+"\nversion2:"+v2+"\ncompareResult:"+compareVersion(v1,v2));
 
@@ -48,34 +48,30 @@ public class CompareVersionNumbers {
             }
         }
 
-        if(v1s.length<=v2s.length){
-
+        if(v1s.length==v2s.length){
+            int v1=Integer.valueOf(v1s[i-1]);
+            int v2=Integer.valueOf(v2s[i-1]);
+            if(v1==v2){
+                return 0;
+            }else{
+                return v1>v2?1:-1;
+            }
         }else{
-
-        }
-
-        if(i==v2s.length){
-            if(i==v1s.length){
-                int value1=Integer.valueOf(v1s[i]);
-                int value2=Integer.valueOf(v2s[i]);
-                if(value1>value2){
-                    return 1;
-                }else if (value1<value2){
-                    return -1;
-                }else{
-                    return 0;
+            if(v1s.length<v2s.length){
+                for(;i<v2s.length;i++){
+                    int v=Integer.valueOf(v2s[i]);
+                    if(v>0){
+                        return -1;
+                    }
                 }
             }else{
-
-            }
-
-        }else{
-            for(;i<v2s.length;i++){
-                if(Integer.valueOf(v2s[i])>0){
-                    return 1;
+                for(;i<v1s.length;i++){
+                    int v=Integer.valueOf(v1s[i]);
+                    if(v>0){
+                        return 1;
+                    }
                 }
             }
-            return 0;
         }
         return 0;
 
