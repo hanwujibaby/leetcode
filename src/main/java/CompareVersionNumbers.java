@@ -10,6 +10,7 @@
 
  0.1 < 1.1 < 1.2 < 13.37
  * Created by wei4liverpool on 1/16/17.
+ * Solution:比较简单,判断版本号,主要是看分割之后都一样的话,需要继续向后判断是不是都是0
  */
 public class CompareVersionNumbers {
     public static void main(String[] args) {
