@@ -21,7 +21,7 @@ public class ABadVersion {
         int end=n;
         while(start<end){
             //有可能溢出,所以只能end-start,而不能(end+start)/2
-            int mid=start+(end-start)/2;
+           int mid=start+(end-start)/2;
             if(isBadVersion(mid)){
                 end=mid;
             }else{
