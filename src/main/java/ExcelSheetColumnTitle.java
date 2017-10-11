@@ -39,6 +39,7 @@ public class ExcelSheetColumnTitle {
         m=n%26;
         if(m==0){
           stack.push(26);
+          //当余数为0的时候，进位减1
           n=n/26-1;
         }else{
           stack.push(m);
