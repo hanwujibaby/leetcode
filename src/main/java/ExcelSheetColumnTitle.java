@@ -17,7 +17,6 @@ import java.util.Stack;
  28 -> AB
  */
 public class ExcelSheetColumnTitle {
-  static StringBuilder sb=new StringBuilder();
 
   public static void main(String[] args) {
     System.out.printf(convertToTitle(702));
@@ -25,9 +24,8 @@ public class ExcelSheetColumnTitle {
 
 
   public static String convertToTitle(int n) {
-    List<Integer> list =new ArrayList<Integer>();
+    StringBuilder sb=new StringBuilder();
     Stack<Integer> stack=new Stack<Integer>();
-    int i=0;
     int m=0;
     if(n<=26){
       return getValue(n);
@@ -38,16 +36,16 @@ public class ExcelSheetColumnTitle {
       return sb.toString();
     }else{
       while(n>26){
-        i++;
         m=n%26;
         if(m==0){
           stack.push(26);
+          n=n/26-1;
         }else{
           stack.push(m);
+          n=n/26;
         }
-        n=n/26;
       }
-      stack.push(n%26);
+      stack.push(n%26==0?26:n%26);
       while(stack.isEmpty()==false){
         sb.append(getValue(stack.pop()));
       }
