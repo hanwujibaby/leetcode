@@ -12,10 +12,10 @@ public class Numberof1Bits {
 
   public static void main(String[] args) {
     long s=System.currentTimeMillis();
-    System.out.printf("number of bits:"+hammingWeight(  1073741824));
+    //System.out.println(Integer.MAX_VALUE);
+    System.out.printf("number of bits:"+hammingWeight(2147483648));
     long s1=System.currentTimeMillis();
     System.out.println(s1-s);
-
     /*
     int j=100;
     for(int i=0;i<100;i++){
@@ -34,7 +34,6 @@ public class Numberof1Bits {
  }
 
 
-
   // you need to treat n as an unsigned value
   public static int hammingWeight(int n) {
     int x=1;
@@ -45,8 +44,6 @@ public class Numberof1Bits {
         i++;
       }
       x=x<<1;
-      System.out.printf("x:"+x+"\tk:"+k+"\n");
-
     }while(x<=n&x>=0);
     return i;
 
