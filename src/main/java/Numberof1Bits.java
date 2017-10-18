@@ -13,7 +13,7 @@ public class Numberof1Bits {
   public static void main(String[] args) {
     long s=System.currentTimeMillis();
     //System.out.println(Integer.MAX_VALUE);
-    System.out.printf("number of bits:"+hammingWeight(2147483648));
+    //System.out.printf("number of bits:"+hammingWeight(2147483648));
     long s1=System.currentTimeMillis();
     System.out.println(s1-s);
     /*
@@ -46,7 +46,6 @@ public class Numberof1Bits {
       x=x<<1;
     }while(x<=n&x>=0);
     return i;
-
   }
 
 }
