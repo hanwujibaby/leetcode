@@ -47,13 +47,6 @@ public class ReverseBits {
     }
     return Integer.parseUnsignedInt(Long.valueOf(sum).toString());
 
-    /*
-    for(int i=0;i<list.size();i++){
-      sb.append(list.get(i));
-    }
-    */
-    //return sum;
-
   }
 
 }
