@@ -14,6 +14,8 @@ import java.util.HashMap;
 
  *
  * Created by weixing on 17/10/18.
+ *
+ * solution:递归的思想，对于a[n]的数组而言，最大的值为f(a[n-2])+a[a.length-1]和f(a[n-1])中的大者
  */
 public class HouseRobber {
   static HashMap<Integer,Integer> map=new HashMap<Integer, Integer>();
