@@ -9,9 +9,6 @@
 public class MajorityElement {
     public static void main(String[] args) {
         System.out.println(majorityElement(new int[]{1,3,3,3}));
-
-
-
     }
 
 

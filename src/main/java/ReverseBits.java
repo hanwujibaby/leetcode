@@ -12,7 +12,7 @@ import java.util.Stack;
  For example, given input 43261596 (represented in binary as 00000010100101000001111010011100),
  return 964176192 (represented in binary as 00111001011110000010100101000000).
 
- 对1不断的左移32次，然后对结果存储到stack中，然后从stack中弹出，并不断的以2*累积相加；
+ 对1不断的左移32次，然后对的结果存储到stack中，然后从stack中弹出，并不断的以2*累积相加；
 
  */
 public class ReverseBits {
