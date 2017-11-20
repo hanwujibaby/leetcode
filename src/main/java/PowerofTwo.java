@@ -9,12 +9,22 @@ public class PowerofTwo {
 
   public static void main(String[] args) {
 
+      System.out.print("reuslt:"+isPowerOfTwo(3));
+
   }
 
 
-  public boolean isPowerOfTwo(int n) {
-    return false;
+  public static boolean isPowerOfTwo(int n) {
+    if(n==1){
+        return true;
+    }
 
+      int k=1;
+
+      do{
+          k=k<<1;
+      }while(k<n);
+      return k==n?true:false;
   }
 
 
