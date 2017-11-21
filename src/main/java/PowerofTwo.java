@@ -9,7 +9,11 @@ public class PowerofTwo {
 
   public static void main(String[] args) {
 
-      System.out.print("reuslt:"+isPowerOfTwo(3));
+
+      long s1=System.currentTimeMillis();
+      System.out.print("reuslt:"+isPowerOfTwo(1073741825)+"\n");
+      long s2=System.currentTimeMillis();
+    System.out.print("cost time:"+(s2-s1)+"ms");
 
   }
 
@@ -23,7 +27,7 @@ public class PowerofTwo {
 
       do{
           k=k<<1;
-      }while(k<n);
+      }while(k<n&&k>0);
       return k==n?true:false;
   }
 
