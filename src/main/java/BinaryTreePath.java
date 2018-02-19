@@ -16,10 +16,10 @@ public class BinaryTreePath {
     public static void main(String[] args) {
 
 
-        TreeNode root = new TreeNode("1");
-        TreeNode l1 = new TreeNode("2");
-        TreeNode r1 = new TreeNode("3");
-        TreeNode r2 = new TreeNode("5");
+        TreeNode root = new TreeNode(1);
+        TreeNode l1 = new TreeNode(2);
+        TreeNode r1 = new TreeNode(3);
+        TreeNode r2 = new TreeNode(5);
         root.left = l1;
         root.right = r1;
         l1.right = r2;
