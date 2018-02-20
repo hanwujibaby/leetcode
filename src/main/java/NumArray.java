@@ -1,3 +1,7 @@
+import javafx.util.Pair;
+
+import java.util.HashMap;
+
 /**
  * Given an integer array nums, find the sum of the elements between indices i and j (i ≤ j), inclusive.
  * <p>
@@ -15,17 +19,26 @@
  */
 public class NumArray {
     public static void main(String[] args) {
+        int[] s = new int[]{-2, 0, 3, -5, 2, -1};
+        NumArray numArray = new NumArray(s);
+        System.out.println("sumRange(0,2):" + numArray.sumRange(0, 2));
+        System.out.println("sumRange(2,5):" + numArray.sumRange(2, 5));
+        System.out.println("sumRange(0,5):" + numArray.sumRange(0, 5));
 
     }
 
 
-    private int[] nums;
+    private int[] sum;
 
     public NumArray(int[] nums) {
-        nums = nums;
+        sum = new int[nums.length + 1];
+        for (int i = 0; i < nums.length; i++) {
+            sum[i + 1] = sum[i] + nums[i];
+        }
     }
 
     public int sumRange(int i, int j) {
+        return sum[j + 1] - sum[i];
 
     }
 
@@ -35,6 +48,5 @@ public class NumArray {
      * NumArray obj = new NumArray(nums);
      * int param_1 = obj.sumRange(i,j);
      */
-
 
 }
