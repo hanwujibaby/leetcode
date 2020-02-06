@@ -1,2 +1,7 @@
 /target
-.idea/*.xml
+.idea/compiler.xml
+.idea/inspectionProfiles/Project_Default.xml
+.idea/kotlinc.xml
+.idea/modules.xml
+.idea/saveactions_settings.xml
+leetcode.iml
