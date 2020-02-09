@@ -22,8 +22,8 @@
  * TreeNode right;
  * TreeNode(int x) { val = x; }
  * }
- *
- *
+ * <p>
+ * <p>
  * solution:按照mid分解数组，左右数组也是分开的归并为子树节点。
  */
 public class Convert_Sorted_Array_To_Binary_Search_Tree {
@@ -40,12 +40,12 @@ public class Convert_Sorted_Array_To_Binary_Search_Tree {
 
 
     public TreeNode sortedArrayToBST(int[] nums) {
-        int len=nums.length;
-        if(len==0){
+        int len = nums.length;
+        if (len == 0) {
             return null;
         }
 
-        return buildTree(nums,0,len-1);
+        return buildTree(nums, 0, len - 1);
 
     }
 
