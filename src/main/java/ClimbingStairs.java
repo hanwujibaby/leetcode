@@ -1,4 +1,5 @@
 import java.util.HashMap;
+import java.util.concurrent.LinkedBlockingQueue;
 
 /**
  * Created by wei4liverpool on 12/27/16.
@@ -17,6 +18,9 @@ public class ClimbingStairs {
         long s1 = System.currentTimeMillis();
         System.out.println(climbStairs(30));
         System.out.println(System.currentTimeMillis() - s1 + "ms");
+        Thread d=new Thread();
+        d.run();
+
 
     }
 
