@@ -40,32 +40,15 @@ public class BestTimetoBuyandSellStock2 {
         }
 
         int sum = 0;
-        int start = 0;
-
         for (int i = 0; i < prices.length - 1; i++) {
             int j = i + 1;
             int n = prices[j] - prices[i];
-            if (n < 0) {
-                if(sum>=0){
-                    start = i;
-                }else{
-                    start=j;
-                }
-                continue;
-            }
-
             if (n > 0) {
-                if (sum == 0) {
-                    sum = n;
-                    start=i;
-                }
-                if (sum > 0) {
-
-                }
+                sum += n;
             }
         }
 
-        return 0;
+        return sum;
 
     }
 }
