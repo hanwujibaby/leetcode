@@ -41,7 +41,6 @@ public class ValidPalindrome {
                 j--;
             }
 
-
             if(chars[i]==chars[j]){
                 i++;j--;
             }else{

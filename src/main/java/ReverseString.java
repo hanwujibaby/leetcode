@@ -31,14 +31,12 @@ public class ReverseString {
             System.out.print('"'+s[i]+'"'+",");
         }
 
-
     }
 
     public static void reverseString(char[] s) {
         int mid = (0 + s.length - 1) / 2;
         System.out.printf("length:"+s.length+"\t"+mid+"\n");
         char tmp;
-
         for (int i = 0, j = s.length - 1; i <= mid && j > i; i++, j--) {
             tmp = s[i];
             s[i] = s[j];
