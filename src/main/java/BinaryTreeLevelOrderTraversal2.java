@@ -57,7 +57,7 @@ public class BinaryTreeLevelOrderTraversal2 {
 
 
     public static List<List<Integer>> levelOrderBottom(TreeNode root) {
-        LinkedList<List<Integer>> resultList = new LinkedList<>();
+        LinkedList<List<Integer>> resultList = new LinkedList<List<Integer>>();
         Stack<List<Integer>> stack = new Stack<List<Integer>>();
         List<Integer> nodeList = new LinkedList<Integer>();
         List<TreeNode> leafList = new LinkedList<TreeNode>();
@@ -73,7 +73,7 @@ public class BinaryTreeLevelOrderTraversal2 {
         }
 
         while (leafList.isEmpty() == false) {
-            nodeList=new LinkedList<Integer>();
+            nodeList = new LinkedList<Integer>();
             List<TreeNode> tmpList = new LinkedList<TreeNode>();
             for (int i = 0; i < leafList.size(); i++) {
                 TreeNode node = leafList.get(i);

@@ -51,7 +51,7 @@ public class TwoSum2 {
             }
         }
         */
-        HashMap<Integer, Integer> bucket = new HashMap<>();
+        HashMap<Integer, Integer> bucket = new HashMap<Integer, Integer>();
         for (int i = 0; i < numbers.length; i++) {
             bucket.put(numbers[i], i + 1);
         }

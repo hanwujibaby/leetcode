@@ -26,7 +26,7 @@ public class ValidAnagram {
     public static boolean isAnagram(String s, String t) {
         char[] sChars = s.toCharArray();
         char[] tChars = t.toCharArray();
-        Hashtable<Integer, Integer> hash = new Hashtable<>();
+        Hashtable<Integer, Integer> hash = new Hashtable<Integer, Integer>();
         if (sChars.length != t.length()) {
             return false;
         }

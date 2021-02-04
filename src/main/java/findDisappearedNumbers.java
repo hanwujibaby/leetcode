@@ -32,7 +32,7 @@ public class findDisappearedNumbers {
     }
 
     public static List<Integer> findDisappearedNumbers(int[] nums) {
-        List<Integer> list = new ArrayList<>();
+        List<Integer> list = new ArrayList<Integer>();
         int[] m = new int[nums.length + 1];
 
         for (int i = 0; i < nums.length; i++) {
