@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 
@@ -21,8 +22,7 @@ public class ThreaSum {
     public static void main(String[] args) {
         //int[] s = new int[]{-1, 0, 1, 2, -1, -4};
         int[] s = new int[]{-1, 0, 1, 2, -1, -4, -2, -3, 3, 0, 4};
-        List<List<Integer>> sum = threeSum(s);
-
+        List<List<Integer>> sum = threaSum(s);
         for (int i = 0; i < sum.size(); i++) {
             List<Integer> list = sum.get(i);
             StringBuilder sb = new StringBuilder();
@@ -32,9 +32,52 @@ public class ThreaSum {
             }
             System.out.printf(sb.toString() + "\n");
         }
+    }
+
+
+    public static List<List<Integer>> threaSum(int[] nums) {
+        Arrays.sort(nums);
+        List<List<Integer>> resultList = new ArrayList<List<Integer>>();
+        for (int i = 0; i < nums.length; i++) {
+            if (nums[i] > 0) {
+                return resultList;
+            }
+            if (i > 0 && nums[i - 1] == nums[i]) {
+                continue;
+            }
+            int L = i + 1;
+            int R = nums.length - 1;
+            while (L < R) {
+                int sum = nums[i] + nums[L] + nums[R];
+                if (sum == 0) {
+                    List<Integer> list = new ArrayList<Integer>();
+                    list.add(nums[i]);
+                    list.add(nums[L]);
+                    list.add(nums[R]);
+                    resultList.add(list);
+
+                    while (L < R && nums[L + 1] == nums[L]) {
+                        L++;
+                    }
+
+                    while (L < R && nums[R - 1] == nums[R]) {
+                        R--;
+                    }
+                    L++;
+                    R--;
+                } else if (sum < 0) {
+                    L++;
+                } else {
+                    R--;
+                }
+            }
+        }
+        //for(int i=0;)
+        return resultList;
 
     }
 
+    /*
     public static List<List<Integer>> threeSum(int[] nums) {
         ArrayList<List<Integer>> resultList = new ArrayList<List<Integer>>();
         ArrayList<Integer> negtiveNumList = new ArrayList<Integer>();
@@ -105,5 +148,6 @@ public class ThreaSum {
 
         return resultList;
     }
+    */
 
 }
