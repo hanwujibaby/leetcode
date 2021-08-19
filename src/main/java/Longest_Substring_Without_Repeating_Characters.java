@@ -25,6 +25,8 @@ import java.util.*;
  * 提示： 0 <= s.length <= 5 * 104
  * s 由英文字母、数字、符号和空格组成
  *
+ * 解法：循环遍历，将重复的字母放入到hashList中，然后遍历list元素之间的长度，保留最长的字段。
+ *
  */
 public class Longest_Substring_Without_Repeating_Characters {
     public static void main(String[] args) {
